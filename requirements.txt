@@ -1,0 +1,15 @@
+h5py == 2.10
+
+Python == 3.8
+
+PyTorch == 1.6
+
+numpy == 1.18.5
+
+matplotlib == 3.2.2
+
+scikit-learn == 0.23.1
+
+opencv-python == 4.4.0.42
+
+Pillow - Python Image Library (PIL) == 7.2.0
