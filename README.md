@@ -78,7 +78,12 @@ In the root directory are a the expression_predictor.ipynb Jupyter Notebook and 
 
 ## Predicted Expression Examples
 
-Examples for every emotion
+| ![happy_expression_ex](.\predictor_images_predicted\happy_expression_ex.jpg) | ![neutral_expression_ex](.\predictor_images_predicted\neutral_expression_ex.jpg) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![sad_expression_ex](.\predictor_images_predicted\sad_expression_ex.jpg) | ![disgust_expression_ex](.\predictor_images_predicted\disgust_expression_ex.jpg) |
+| ![angry_expression_ex](.\predictor_images_predicted\angry_expression_ex.jpg) | ![fear_expression_ex](.\predictor_images_predicted\fear_expression_ex.jpg) |
+
+
 
 ## Conclusions
 
@@ -140,12 +145,10 @@ NVIDIA CUDA 11.0 Capable GPU with at least 6GB of memory
 		|--weights.caffeemodel
 |--model_src
 	|--built_models
-		|--__init__.py
 		|--resnet.py
 		|--vgg.py
 	|--model_backend
 		|--transformers
-			|--__init__.py
 			|--functional.py
 			|--transforms.py
 		|--create_confusion_matrix.py
@@ -159,15 +162,20 @@ NVIDIA CUDA 11.0 Capable GPU with at least 6GB of memory
 	|--resnet18_model_confusion_matrix.png
 	|--vgg19_model_confusion_matrix.png
 |--predictor_images_predicted
+	|--6_images
 |--predictor_images_to_predict
+	|--6_images
 |--readme_images
 	|--crowd.png
 	|--resnet18_architecture.jpg
 	|--vgg19_architecture.jpg
 |--expression_predictor.ipynp
 |--expression_predictor.py
+|--expression_recognition_presentation.pdf
 |--README.MD
 |--requirements.txt
+|--LICENSE
+|--.gitignore
 ```
 
 
