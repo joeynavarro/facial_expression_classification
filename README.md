@@ -1,6 +1,6 @@
 # Facial Emotion Classification Using Deep Convolutional Neural Networks
 
-![crowd](.\readme_images\crowd.png)
+![crowd](./readme_images/crowd.png)
 
 **[Image Sourced From Kairos](https://www.kairos.com/blog/face-detection-explained)**
 
@@ -32,7 +32,7 @@ Two deep convolutional neural network model architectures are used in this proje
 
 This network's name comes from it's founding group at Oxford, namely Visual Geometry Group (VGG). The 19 after the name stands for the number of layers in the network. This network can be used for transfer learning, therefore it may also be used for facial recognition tasks. It's architecture is as follows:
 
-![vgg19_architecture](.\readme_images\vgg19_architecture.jpg)
+![vgg19_architecture](./readme_images/vgg19_architecture.jpg)
 
 You may find more information by reading this **[VGG19 Research Paper](https://arxiv.org/pdf/1409.1556.pdf)**.
 
@@ -40,7 +40,7 @@ You may find more information by reading this **[VGG19 Research Paper](https://a
 
 This network's name comes from the functions used by the network, namely residual learning functions or Residual learning Network (ResNet).   The 18 after the name stands for the number of layers in the network. It's architecture is as follows:
 
-![resnet18_architecture](.\readme_images\resnet18_architecture.jpg)
+![resnet18_architecture](./readme_images/resnet18_architecture.jpg)
 
 
 
@@ -66,22 +66,22 @@ In the root directory are a the expression_predictor.ipynb Jupyter Notebook and 
 
 | Model Accuracy                                               |
 | ------------------------------------------------------------ |
-| ![model_accuracy_viz](.\model_visualizations\model_accuracy_viz.png) |
+| ![model_accuracy_viz](./model_visualizations/model_accuracy_viz.png) |
 | **Model Loss**                                               |
-| ![model_loss_viz](.\model_visualizations\model_loss_viz.png) |
+| ![model_loss_viz](./model_visualizations/model_loss_viz.png) |
 
 | VGG19 Confusion Matrix                                       | ResNet18 Confusion Matrix                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![vgg19_model_confusion_matrix](.\model_visualizations\vgg19_model_confusion_matrix.png) | ![resnet18_model_confusion_matrix](.\model_visualizations\resnet18_model_confusion_matrix.png) |
+| ![vgg19_model_confusion_matrix](./model_visualizations/vgg19_model_confusion_matrix.png) | ![resnet18_model_confusion_matrix](./model_visualizations/resnet18_model_confusion_matrix.png) |
 
 
 
 ## Predicted Expression Examples
 
-| ![happy_expression_ex](.\predictor_images_predicted\happy_expression_ex.jpg) | ![neutral_expression_ex](.\predictor_images_predicted\neutral_expression_ex.jpg) |
+| ![happy_expression_ex](./predictor_images_predicted/happy_expression_ex.jpg) | ![neutral_expression_ex](./predictor_images_predicted/neutral_expression_ex.jpg) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![sad_expression_ex](.\predictor_images_predicted\sad_expression_ex.jpg) | ![disgust_expression_ex](.\predictor_images_predicted\disgust_expression_ex.jpg) |
-| ![angry_expression_ex](.\predictor_images_predicted\angry_expression_ex.jpg) | ![fear_expression_ex](.\predictor_images_predicted\fear_expression_ex.jpg) |
+| ![sad_expression_ex](./predictor_images_predicted/sad_expression_ex.jpg) | ![disgust_expression_ex](./predictor_images_predicted/disgust_expression_ex.jpg) |
+| ![angry_expression_ex](./predictor_images_predicted/angry_expression_ex.jpg) | ![fear_expression_ex](./predictor_images_predicted/fear_expression_ex.jpg) |
 
 
 
