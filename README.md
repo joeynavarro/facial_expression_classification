@@ -6,7 +6,7 @@
 
 ## Introduction
 
-There are times when we don't recognize our own emotions as we feel them. Usually, a good indicator of our emotional state is the expression we wear on our face. I would like to be able to take an image of a face such as a selfie and use it as a means to recognize the emotional state that the featured person of the image is in based off of their facial expression. In order to accomplish this I will build two convolutional neural network models of known model architecture (VGG19, ResNet18) that will take in flattened image pixel arrays as input data. The pixel arrays will be scaled and split into a training and testing set which will be used by the models built within a framework created utilizing  the PyTorch machine learning library.  The framework will facilitate creation of a model through utilizing training data learning on testing data for a reasonable range of epoch passes. The trained model will then be able to be utilized to predict facial expressions and report the expression predicted.
+My sister-in-law is on the autism spectrum and through my interactions with her I know that individuals on the autism spectrum often struggle to understand the emotion of others through their facial expressions or other features. Usually, a good indicator of our emotional state is the expression we wear on our face. What if there was a way to detect emotion based off of facial expressions to help individuals on the autism spectrum identify how others feel? I would like to be able to take an image of a face such as a selfie and use it as a means to recognize the emotional state that the featured person of the image is in based off of their facial expression. In order to accomplish this I will build two convolutional neural network models of known model architecture (VGG19, ResNet18) that will take in flattened image pixel arrays as input data. The pixel arrays will be scaled and split into a training and testing set which will be used by the models built within a framework created utilizing  the PyTorch machine learning library.  The framework will facilitate creation of a model through utilizing training data learning on testing data for a reasonable range of epoch passes. The trained model will then be able to be utilized to predict facial expressions and report the expression predicted.
 
 
 
@@ -64,10 +64,10 @@ In the root directory are a the expression_predictor.ipynb Jupyter Notebook and 
 
 ## Visualizations
 
-| Model Accuracy                                               |
-| ------------------------------------------------------------ |
+|                        Model Accuracy                        |
+| :----------------------------------------------------------: |
 | ![model_accuracy_viz](./model_visualizations/model_accuracy_viz.png) |
-| **Model Loss**                                               |
+|                        **Model Loss**                        |
 | ![model_loss_viz](./model_visualizations/model_loss_viz.png) |
 
 | VGG19 Confusion Matrix                                       | ResNet18 Confusion Matrix                                    |
@@ -87,9 +87,7 @@ In the root directory are a the expression_predictor.ipynb Jupyter Notebook and 
 
 ## Conclusions
 
-The CK+ dataset proved to be a very useful dataset to use for creating a model using deep convolutional neural networks. Both VGG19 and ResNet18 led to the creation of very accurate models with low loss rates. The models  were not perfect as both neural networks struggled slightly when distinguishing between some emotions. VGG19 struggled slightly when learning disgust, sadness, and surprise. ResNet18 struggled slightly when learning anger, disgust, fear, sadness, surprise, and contempt. Therefore, when deciding which model to use for making expression predictions, VGG19 was the natural choice. When predicting expressions the model struggled when the image did not have a plain background and it also struggled to distinguish between subtly different emotions when in practice on real world images. Future work would focus on obtaining a larger dataset with more training data that shows a bit more variation in the expressions for each emotion.
-
-
+The CK+ dataset proved to be a very useful dataset to use for creating a model using deep convolutional neural networks. Both VGG19 and ResNet18 Model Architecture led to the creation of very accurate models with low loss rates. The models were not perfect as both neural networks struggled slightly when distinguishing between some emotions. VGG19 struggled slightly when learning disgust, sadness, and surprise. ResNet18 struggled slightly when learning anger, disgust, fear, sadness, surprise, and contempt. Therefore, when deciding which model to use for making expression predictions, VGG19 was the natural choice. When predicting expressions the model struggled when the image did not have a plain background and it also struggled to distinguish between subtly different emotions when in practice on real world images. Future work would focus on obtaining a larger dataset with more training data that shows a bit more variation in the expressions for each emotion and also creating a webcam app to use in real time for individuals such as my sister-in-law.
 
 ## Requirements
 
@@ -117,61 +115,62 @@ NVIDIA CUDA 11.0 Capable GPU with at least 6GB of memory
 
 ```
 |--data
-	|--ck+
-		|--anger
-			|--135_images
-		|--contempt
-			|--54_images
-		|--disgust
-			|--177_images
-		|--fear
-			|--75_images
-		|--happy
-			|--207_images
-		|--sadness
-			|--84_images
-		|--surprise
-			|--249_images
-		|--ck_data.h5
-	|--model_emojis
-		|--7_images
+	└--ck+
+		└--anger
+			└--135_images
+		└--contempt
+			└--54_images
+		└--disgust
+			└--177_images
+		└--fear
+			└--75_images
+		└--happy
+			└--207_images
+		└--sadness
+			└--84_images
+		└--surprise
+			└--249_images
+		└--ck_data.h5
+	└--model_emojis
+		└--7_images
 |--model_checkpoints
-	|--CK+_Resnet18
-		|--emoclass_model.t7
-	|--CK+_VGG19
-		|--emoclass_model.t7
-	|--predictor_weights
-		|--deploy.prototxt
-		|--weights.caffeemodel
+	└--CK+_Resnet18
+		└--emoclass_model.t7
+	└--CK+_VGG19
+		└--emoclass_model.t7
+	└--predictor_weights
+		└--deploy.prototxt
+		└--weights.caffeemodel
 |--model_src
-	|--built_models
+	└--built_models
 		|--resnet.py
-		|--vgg.py
-	|--model_backend
-		|--transformers
-			|--functional.py
-			|--transforms.py
-		|--create_confusion_matrix.py
-		|--create_train_data.py
-		|--progress_bar.py
-	|--model_executor.ipynb
-	|--model_executor.py
+		└--vgg.py
+	└--model_backend
+		└--transformers
+			└--functional.py
+			└--transforms.py
+		└--create_confusion_matrix.py
+		└--create_train_data.py
+		└--progress_bar.py
+	└--model_executor.ipynb
+	└--model_executor.py
 |--model_visualizations
-	|--model_accuracy_viz.png
-	|--model_loss_viz.png
-	|--resnet18_model_confusion_matrix.png
-	|--vgg19_model_confusion_matrix.png
+	└--model_accuracy_viz.png
+	└--model_loss_viz.png
+	└--resnet18_model_confusion_matrix.png
+	└--vgg19_model_confusion_matrix.png
 |--predictor_images_predicted
-	|--6_images
+	└--6_images
 |--predictor_images_to_predict
-	|--6_images
+	└--6_images
 |--readme_images
-	|--crowd.png
-	|--resnet18_architecture.jpg
-	|--vgg19_architecture.jpg
+	└--crowd.png
+	└--resnet18_architecture.jpg
+	└--vgg19_architecture.jpg
 |--expression_predictor.ipynp
 |--expression_predictor.py
 |--expression_recognition_presentation.pdf
+|--expression_recognition_presentation.pptx
 |--README.MD
 |--requirements.txt
 |--LICENSE
@@ -182,18 +181,18 @@ NVIDIA CUDA 11.0 Capable GPU with at least 6GB of memory
 
 ## References
 
-https://www.researchgate.net/figure/Proposed-Modified-ResNet-18-architecture-for-Bangla-HCR-In-the-diagram-conv-stands-for_fig1_323063171
+Ahmed, S., Alif, M. A. R., Hassan, M. A. (2017). *Isolated Bangla handwritten character recognition with convolutional neural network*. Conference: 2017 20th International Conference of Computer and Information Technology (ICCIT). https://www.researchgate.net/figure/Proposed-Modified-ResNet-18-architecture-for-Bangla-HCR-In-the-diagram-conv-stands-for_fig1_323063171
 
-https://www.researchgate.net/figure/llustration-of-the-network-architecture-of-VGG-19-model-conv-means-convolution-FC-means_fig2_325137356
+He, K., Zhang, X., Ren, S., Sun, J. (2015). *Deep Residual Learning for Image Recognition*. Cornell University. [arXiv:1512.03385](https://arxiv.org/abs/1512.03385) [cs.CV]
 
-Kanade, T., Cohn, J. F., & Tian, Y. (2000). Comprehensive database for facial expression analysis. Proceedings of the Fourth IEEE International Conference on Automatic Face and Gesture Recognition (FG'00), Grenoble, France, 46-53. 
+Kanade, T., Cohn, J. F., & Tian, Y. (2000). *Comprehensive database for facial expression analysis*. Proceedings of the Fourth IEEE International Conference on Automatic Face and Gesture Recognition (FG'00), Grenoble, France, 46-53. 
 
-Lucey, P., Cohn, J. F., Kanade, T., Saragih, J., Ambadar, Z., & Matthews, I. (2010). The Extended Cohn-Kanade Dataset (CK+): A complete expression dataset for action unit and emotion-specified expression. Proceedings of the Third International Workshop on CVPR for Human Communicative Behavior Analysis (CVPR4HB 2010), San Francisco, USA, 94-101.
+Lucey, P., Cohn, J. F., Kanade, T., Saragih, J., Ambadar, Z., & Matthews, I. (2010). *The Extended Cohn-Kanade Dataset (CK+): A complete expression dataset for action unit and emotion-specified expression.* Proceedings of the Third International Workshop on CVPR for Human Communicative Behavior Analysis (CVPR4HB 2010), San Francisco, USA, 94-101.
 
-Simonyan, K., Zisserman, A. (2015). Very Deep Convolutional Networks for Large-Scale Image Recognition. Cornell University. [arXiv:1409.1556](https://arxiv.org/abs/1409.1556) [cs.CV]
+Merkulov, A., Yang, C., Zheng, Y. (2018). *Breast cancer screening using convolutional neural network and follow-up digital mammography*. Conference: Computational Imaging III. https://www.researchgate.net/figure/llustration-of-the-network-architecture-of-VGG-19-model-conv-means-convolution-FC-means_fig2_325137356
 
-He, K., Zhang, X., Ren, S., Sun, J. (2015). Deep Residual Learning for Image Recognition. Cornell University. [arXiv:1512.03385](https://arxiv.org/abs/1512.03385) [cs.CV]
+oarriaga. (2019, last commit.). *Face classification and detection*. Github repository. https://github.com/oarriaga/face_classification
 
-oarriaga. (2019, last commit.). Face classification and detection. https://github.com/oarriaga/face_classification
+Simonyan, K., Zisserman, A. (2015). *Very Deep Convolutional Networks for Large-Scale Image Recognition*. Cornell University. [arXiv:1409.1556](https://arxiv.org/abs/1409.1556) [cs.CV]
 
-WuJie1010. (2018, last commit.). Facial-Expression-Recognition.Pytorch. https://github.com/WuJie1010/Facial-Expression-Recognition.Pytorch
+WuJie1010. (2018, last commit.). *Facial-Expression-Recognition.Pytorch*. Github repository. https://github.com/WuJie1010/Facial-Expression-Recognition.Pytorch
